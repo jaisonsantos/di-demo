@@ -1,5 +1,6 @@
 package com.springframework.didemo.service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,12 +8,11 @@ import org.springframework.stereotype.Service;
  * Created by 09/03/2018
  */
 @Service
-public class GreetingServiceImpl implements GreetingService{
-
-    public static final String HELLO_WORLD = "Hello world - Original !!!";
+@Primary
+public class PrimaryGreetingService implements GreetingService {
 
     @Override
     public String sayGreeting() {
-        return HELLO_WORLD;
+        return "Hello - Primary Greeting Service";
     }
 }
